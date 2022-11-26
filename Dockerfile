@@ -9,4 +9,4 @@ RUN curl -LO https://github.com/pdf/zfs_exporter/releases/download/v2.2.5/zfs_ex
     tar -zxf zfs_exporter-2.2.5.linux-amd64.tar.gz --strip-components=1 -C /opt/zfs_exporter && \
     ln -s /opt/zfs_exporter/zfs_exporter /usr/local/bin/zfs_exporter
 
-CMD ["zfs_exporter --collector.dataset-snapshot"]
+ENTRYPOINT [ "/usr/local/bin/zfs_exporter" ]
